@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>AutoApply Pro</title>
+</head>
+
+<body class="w-[380px] p-4 bg-gray-50 font-sans">
+
+  <h1 class="text-xl font-semibold text-gray-800 mb-4">AutoApply Pro</h1>
+
+  <div class="space-y-3">
+
+    <button id="extractBtn" 
+      class="w-full py-2 px-4 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+      Extract Job Details
+    </button>
+
+    <button id="matchBtn"
+      class="w-full py-2 px-4 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition">
+      Match With My Resume
+    </button>
+
+    <button id="coverLetterBtn"
+      class="w-full py-2 px-4 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition">
+      Generate Custom Cover Letter
+    </button>
+
+    <button id="autofillBtn"
+      class="w-full py-2 px-4 bg-orange-500 text-white rounded-lg shadow hover:bg-orange-600 transition">
+      Auto-Fill Application
+    </button>
+
+    <button id="optionsBtn"
+      class="w-full py-2 px-4 bg-gray-700 text-white rounded-lg shadow hover:bg-gray-800 transition">
+      Open Settings
+    </button>
+
+  </div>
+
+  <!-- Loading Indicator -->
+  <div id="loading" class="hidden text-center mt-4">
+    <div class="animate-spin rounded-full h-6 w-6 border-2 border-gray-300 border-t-blue-600 mx-auto"></div>
+    <p class="text-gray-600 text-sm mt-2">Processing...</p>
+  </div>
+
+  <!-- Results -->
+  <div id="resultContainer" class="hidden mt-4 p-3 bg-white border border-gray-200 rounded-lg shadow-sm max-h-60 overflow-y-auto">
+    <h2 id="resultTitle" class="font-semibold text-gray-700 mb-1"></h2>
+    <p id="resultContent" class="text-sm text-gray-700 whitespace-pre-line"></p>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

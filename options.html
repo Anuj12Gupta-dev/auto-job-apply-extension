@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AutoApply Pro - Settings</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-6 font-sans">
+
+  <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-xl p-8">
+    
+    <h1 class="text-3xl font-semibold text-gray-800 text-center mb-8">
+      AutoApply Pro – Settings
+    </h1>
+
+    <!-- PERSONAL INFORMATION -->
+    <div class="border-b pb-6 mb-6">
+      <h2 class="text-xl font-semibold text-gray-700 mb-4">Personal Information</h2>
+
+      <div class="grid grid-cols-1 gap-4">
+        
+        <div>
+          <label class="text-gray-700 font-medium">Full Name</label>
+          <input id="name" type="text" class="mt-1 w-full border rounded-lg p-3 bg-gray-50" placeholder="Enter your full name">
+        </div>
+
+        <div>
+          <label class="text-gray-700 font-medium">Email Address</label>
+          <input id="email" type="email" class="mt-1 w-full border rounded-lg p-3 bg-gray-50" placeholder="Enter your email">
+        </div>
+
+        <div>
+          <label class="text-gray-700 font-medium">Phone Number</label>
+          <input id="phone" type="text" class="mt-1 w-full border rounded-lg p-3 bg-gray-50" placeholder="Enter your phone number">
+        </div>
+
+        <div>
+          <label class="text-gray-700 font-medium">LinkedIn Profile URL</label>
+          <input id="linkedin" type="text" class="mt-1 w-full border rounded-lg p-3 bg-gray-50" placeholder="https://www.linkedin.com/in/yourname">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RESUME -->
+    <div class="border-b pb-6 mb-6">
+      <h2 class="text-xl font-semibold text-gray-700 mb-4">Resume Information</h2>
+
+      <div class="mb-4">
+        <label class="text-gray-700 font-medium">Resume Text</label>
+        <textarea id="resumeText" class="mt-1 w-full border rounded-lg p-3 bg-gray-50 min-h-[120px]" placeholder="Paste your resume text here..."></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label class="text-gray-700 font-medium">Upload Resume File</label>
+
+        <label class="flex items-center justify-center mt-2 w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+          <span id="fileName" class="text-gray-600">No file chosen</span>
+          <input id="resumeFile" type="file" accept=".pdf,.doc,.docx,.txt" class="hidden">
+        </label>
+      </div>
+
+    </div>
+
+    <!-- SKILLS -->
+    <div class="border-b pb-6 mb-6">
+      <h2 class="text-xl font-semibold text-gray-700 mb-4">Skills</h2>
+
+      <div id="skillsContainer" class="flex flex-wrap gap-2 mb-4">
+        <!-- Dynamic skills go here -->
+      </div>
+
+      <div class="flex gap-3">
+        <input id="newSkill" type="text" class="flex-1 border rounded-lg p-3 bg-gray-50" placeholder="Add a skill (e.g. JavaScript)">
+        <button id="addSkillBtn" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+          Add
+        </button>
+      </div>
+    </div>
+
+    <!-- API KEY -->
+    <div class="pb-6">
+      <h2 class="text-xl font-semibold text-gray-700 mb-4">API Configuration</h2>
+
+      <div>
+        <label class="text-gray-700 font-medium">Gemini API Key</label>
+        <input id="geminiKey" type="password" class="mt-1 w-full border rounded-lg p-3 bg-gray-50" placeholder="Enter your Gemini key">
+
+        <p class="text-xs text-gray-500 mt-2">
+          Your API key is saved locally and never sent anywhere except Google.
+          <br>
+          <a href="https://makersuite.google.com/app/apikey" target="_blank" class="text-blue-600 underline">Get your Gemini API key</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- SAVE BUTTON -->
+    <button id="saveBtn" 
+      class="w-full mt-4 py-3 bg-green-600 text-white text-lg font-medium rounded-lg hover:bg-green-700 transition">
+      Save Settings
+    </button>
+
+    <!-- STATUS -->
+    <div id="statusMessage" class="hidden mt-4 p-3 rounded-lg text-center text-sm"></div>
+
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

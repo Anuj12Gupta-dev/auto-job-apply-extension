@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "AutoApply Pro",
+  "version": "1.0",
+  "description": "Automatically extract job details, match resume, generate responses and autofill applications on job portals.",
+  
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+
+  "host_permissions": [
+    "*://*.linkedin.com/*",
+    "*://*.internshala.com/*",
+    "*://*.naukri.com/*",
+    "*://*.indeed.com/*",
+    "*://*.google.com/*",
+    "<all_urls>"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_title": "AutoApply Pro",
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+
+  "options_page": "options.html",
+
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
